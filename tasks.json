@@ -1,6 +1,6 @@
 [
 	{
-		"label": "01- C++: Compilar y Ejecutar (terminal integrada)",
+		"label": "01- 🧰 C++: Compilar y Ejecutar (terminal integrada)",
 		"command": "bash -c 'if [[ \"$ZED_FILE\" != *.cpp ]]; then echo \"ERROR: Abre un archivo .cpp antes de ejecutar este task\"; exit 1; fi; /usr/bin/g++ \"$ZED_DIRNAME\"/*.cpp -std=c++17 -o \"$ZED_DIRNAME\"/\"$ZED_STEM\" && cd \"$ZED_DIRNAME\" && ./\"$ZED_STEM\"'",
 		"use_new_terminal": true,
 		"allow_concurrent_runs": false,
@@ -9,7 +9,7 @@
 		"shell": "system"
 	},
 	{
-		"label": "02- C++: Compilar y Ejecutar (iTerm)",
+		"label": "02- 🖥️ C++: Compilar y Ejecutar (iTerm)",
 		"command": "bash \"$HOME/Documents/zed-scripts/compile_and_run_cpp.sh\" \"$ZED_FILE\"",
 		"use_new_terminal": false,
 		"allow_concurrent_runs": false,
@@ -18,7 +18,7 @@
 		"shell": "system"
 	},
 	{
-		"label": "03- Ghidra: Analizar (Headless + Decompiled + Report)",
+		"label": "03- 🧠 Ghidra: Analizar (Headless + Decompiled + Report)",
 		"command": "GHIDRA_SCRIPT_DIR=\"$HOME/Documents/zed-scripts/ghidra_scripts\" GHIDRA_PROJECT_DIR=\"$HOME/Documents/GhidraProjects\" bash \"$HOME/Documents/zed-scripts/ghidra_headless.sh\" \"$ZED_DIRNAME\" \"$ZED_STEM\"",
 		"use_new_terminal": true,
 		"allow_concurrent_runs": false,
@@ -26,4 +26,62 @@
 		"hide": "never",
 		"shell": "system"
 	}
+	/*{
+		"label": "04- 🐍 Ejecutar Python (python3)",
+		"command": "bash",
+		"args": [
+			"-lc",
+			"cd \"$ZED_DIRNAME\" && python3 \"$ZED_FILE\""
+		],
+		"use_new_terminal": true,
+		"allow_concurrent_runs": false,
+		"reveal": "always"
+	},
+	{
+		"label": "05- 🐚 Ejecutar Shell Script",
+		"command": "bash",
+		"args": [
+			"-lc",
+			"cd \"$ZED_DIRNAME\" && chmod +x \"$ZED_FILE\" && bash \"$ZED_FILE\""
+		],
+		"use_new_terminal": true,
+		"allow_concurrent_runs": false,
+		"reveal": "always"
+	},
+	{
+		"label": "06- ✅ Ejecutar Script (.sh/.py)",
+		"command": "bash",
+		"args": [
+			"-lc",
+			"ext=\"${ZED_FILE##*.}\"; cd \"$ZED_DIRNAME\" && if [ \"$ext\" = \"py\" ]; then python3 \"$ZED_FILE\"; elif [ \"$ext\" = \"sh\" ]; then chmod +x \"$ZED_FILE\" && bash \"$ZED_FILE\"; else echo \"Este task solo soporta .sh y .py (archivo actual: $ZED_FILE)\"; exit 1; fi"
+		],
+		"use_new_terminal": true,
+		"allow_concurrent_runs": false,
+		"reveal": "always"
+	},
+	{
+		"label": "07- 📝 Compilar solo (make)",
+		"command": "bash",
+		"args": [
+			"-lc",
+			"make"
+		],
+		"cwd": "$ZED_WORKTREE_ROOT/Exercices",
+		"use_new_terminal": false,
+		"allow_concurrent_runs": false,
+		"reveal": "always"
+	},
+	{
+		"label": "08- 🧹 Limpiar compilación (make clean)",
+		"command": "bash",
+		"args": [
+			"-lc",
+			"make clean"
+		],
+		"cwd": "$ZED_WORKTREE_ROOT/Exercices",
+		"use_new_terminal": false,
+		"allow_concurrent_runs": false,
+		"reveal": "always"
+	}
+	*/
 ]
