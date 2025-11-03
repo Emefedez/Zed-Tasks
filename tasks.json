@@ -1,0 +1,29 @@
+[
+	{
+		"label": "01- C++: Compilar y Ejecutar (terminal integrada)",
+		"command": "/usr/bin/g++ \"$ZED_DIRNAME\"/*.cpp -std=c++17 -o \"$ZED_DIRNAME\"/\"$ZED_STEM\" && cd \"$ZED_DIRNAME\" && ./\"$ZED_STEM\"",
+		"use_new_terminal": true,
+		"allow_concurrent_runs": false,
+		"reveal": "always",
+		"hide": "never",
+		"shell": "system"
+	},
+	{
+		"label": "02- C++: Compilar y Ejecutar (iTerm)",
+		"command": "bash \"$HOME/Documents/zed-scripts/compile_and_run_cpp.sh\" \"$ZED_FILE\"",
+		"use_new_terminal": false,
+		"allow_concurrent_runs": false,
+		"reveal": "always",
+		"hide": "never",
+		"shell": "system"
+	},
+	{
+		"label": "03- Ghidra: Analizar (Headless + Decompiled + Report)",
+		"command": "GHIDRA_SCRIPT_DIR=\"$HOME/Documents/zed-scripts/ghidra_scripts\" GHIDRA_PROJECT_DIR=\"$HOME/Documents/GhidraProjects\" bash \"$HOME/Documents/zed-scripts/ghidra_headless.sh\" \"$ZED_DIRNAME\" \"$ZED_STEM\"",
+		"use_new_terminal": true,
+		"allow_concurrent_runs": false,
+		"reveal": "always",
+		"hide": "never",
+		"shell": "system"
+	}
+]
