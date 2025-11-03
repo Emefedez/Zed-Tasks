@@ -1,7 +1,7 @@
 [
 	{
 		"label": "01- C++: Compilar y Ejecutar (terminal integrada)",
-		"command": "/usr/bin/g++ \"$ZED_DIRNAME\"/*.cpp -std=c++17 -o \"$ZED_DIRNAME\"/\"$ZED_STEM\" && cd \"$ZED_DIRNAME\" && ./\"$ZED_STEM\"",
+		"command": "bash -c 'if [[ \"$ZED_FILE\" != *.cpp ]]; then echo \"ERROR: Abre un archivo .cpp antes de ejecutar este task\"; exit 1; fi; /usr/bin/g++ \"$ZED_DIRNAME\"/*.cpp -std=c++17 -o \"$ZED_DIRNAME\"/\"$ZED_STEM\" && cd \"$ZED_DIRNAME\" && ./\"$ZED_STEM\"'",
 		"use_new_terminal": true,
 		"allow_concurrent_runs": false,
 		"reveal": "always",
